@@ -13,6 +13,7 @@ services:
       - ./init_pg.sql:/docker-entrypoint-initdb.d/init_pg.sql
     ports:
       - "5432:5432"
+    restart: unless-stopped
 
   clickhouse:
     image: clickhouse/clickhouse-server:23.3
@@ -29,6 +30,7 @@ services:
       - ./ch_config.xml:/etc/clickhouse-server/config.d/postgres.xml
     depends_on:
       - postgres
+    restart: unless-stopped
 
   superset:
     build:
@@ -54,6 +56,7 @@ services:
       superset init &&
       superset run -h 0.0.0.0 -p 8088 --with-threads --reload --debug
       "
+    restart: unless-stopped
 
 volumes:
   pg_data:
