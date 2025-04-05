@@ -1,0 +1,18 @@
+<yandex>
+  <remote_servers>
+  </remote_servers>
+
+  <postgresql>
+    <demo_pg>
+      <host>postgres</host>
+      <port>5432</port>
+      <user>demo</user>
+      <password>demo</password>
+      <db>demo</db>
+    </demo_pg>
+  </postgresql>
+
+  <table_function_postgresql>
+    <enabled>1</enabled>
+  </table_function_postgresql>
+</yandex>
